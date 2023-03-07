@@ -1,33 +1,32 @@
-# BackUP 2 GoogleDrive
-
-[ENG_README is here]()
+# Upload to GoogleDrive
+[KOR_README is here](https://github.com/On-JungWoan/upload2gdrive/blob/master/README_KOR.md)
 
 <br>
 
 # Introduction
-bu2gd는 원하는 파일 또는 폴더를 구글 드라이브에 자동으로 업로드 해줍니다.
+Upload2gdrive automatically uploads desired files or folders to Google Drive.
 
-1. **폴더**: zip파일로 압축하여 구글 드라이브에 업로드 합니다. 생성된 zip파일은 `backup_file/` 하위에 저장됩니다.
+1. **Folder**: Upload2gdrive will upload files to Google Drive by compressing it into a zip file. The generated zip file will be stored under 'backup_file/'.
 
-2. **파일**: 원본 파일의 복사본을 생성하고, 복사본을 구글 드라이브에 업로드 합니다. 복사된 파일은 `backup_file/` 하위에 저장됩니다.
-
-<br>
-
-# 사전준비
-
-> Setting up API keys: [link](https://psychoria.tistory.com/674)
-
-(생략)
+2. **File**: Upload2gdrive will create a copy of the original file and upload it to Google Drive. The copied file will be stored under 'backup_file/'.
 
 <br>
 
-# 사용법
+# Settings
+
+> Setting up API keys: [link](https://support.google.com/googleapi/answer/6158862?hl=en)
+
+(...not yet)
+
+<br>
+
+# How to use upload2gdrive
 
 <details>
 
-<summary> 폴더 업로드 </summary>
+<summary> Upload folder </summary>
 
-폴더 전체를 업로드하고 싶다면, 터미널에 다음 명령어를 입력합니다.
+If you want to upload an entire folder, enter the following command in the terminal.
 
 ```
 > bash scripts/upload_dirs.sh /your/file/path/
@@ -37,9 +36,9 @@ bu2gd는 원하는 파일 또는 폴더를 구글 드라이브에 자동으로 �
 
 <details>
 
-<summary> 파일 업로드 </summary>
+<summary> Upload file </summary>
 
-특정 파일을 업로드하고 싶다면, 터미널에 다음 명령어를 입력합니다.
+If you want to upload an specific file, enter the following command in the terminal.
 
 ```
 > bash scripts/upload_files.sh /your/file.txt
@@ -49,9 +48,9 @@ bu2gd는 원하는 파일 또는 폴더를 구글 드라이브에 자동으로 �
 
 <details>
 
-<summary> 특정파일 무시 </summary>
+<summary> Ignore files </summary>
 
-만약 폴더를 업로드할 때, 특정 파일을 무시하고 업로드 하고 싶다면, `params/IGNORE_LIST`에 무시하고자 하는 디렉토리 또는 파일의 이름을 적으면 됩니다. 이 때, 줄바꿈하지 않고 한 줄로 적어야합니다.
+If you want to ignore specific files or directories when uploading a folder, simply add their names to `params/IGNORE_LIST`. Make sure to list the names on a single line without any line breaks.
 
 ```
 [params/IGNORE_LIST]
@@ -59,15 +58,15 @@ bu2gd는 원하는 파일 또는 폴더를 구글 드라이브에 자동으로 �
 cache test log secret.txt
 ```
 
-cache, test, log, secret.txt는 무시하고 업로드하게 됩니다.
+The files and directories named `cache`, `test`, `log`, and `secret.txt` will be ignored and not uploaded
 
 </details>
 
 <details>
 
-<summary> 커스텀 </summary>
+<summary> Custom </summary>
 
-만약, shell파일을 커스텀하고 싶다면, `scripts/upload_custom.sh`의 내용을 수정해주면 됩니다.
+If you want to customize the shell script, you can modify the contents of `scripts/upload_custom.sh`.
 
 ```
 [scripts/upload_custom.sh]
